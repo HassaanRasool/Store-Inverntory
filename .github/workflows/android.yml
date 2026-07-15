@@ -2,8 +2,9 @@ name: Build Android APK
 on:
   push:
     tags:
-      tags: ['v*']
-  workflow_dispatch: # <--- ADD THIS LINE
+      - 'v*'
+  workflow_dispatch:
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -25,7 +26,7 @@ jobs:
         run: npm install
 
       - name: Build Next.js App
-        run: npm run build # Ensure this creates your static output (e.g., 'out' folder)
+        run: npm run build
 
       - name: Sync Capacitor
         run: npx cap sync android
