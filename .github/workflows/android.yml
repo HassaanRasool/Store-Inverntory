@@ -2,8 +2,8 @@ name: Build Android APK
 on:
   push:
     tags:
-      - 'v*' # Trigger build when you push a tag like v1.0.0
-
+      tags: ['v*']
+  workflow_dispatch: # <--- ADD THIS LINE
 jobs:
   build:
     runs-on: ubuntu-latest
